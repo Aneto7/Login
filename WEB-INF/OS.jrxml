@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.0.final using JasperReports Library version 6.5.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ccb7063c-a623-4b0d-9bb6-9c9d48b7e72a">
+	<property name="ireport.zoom" value="1.9487171000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Habsys"/>
+	<subDataset name="Dataset1" uuid="55d415ea-6dfc-4767-bd2b-c19d858a018e">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Alianz"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<parameter name="INICIO" class="java.lang.String"/>
+	<parameter name="FIM" class="java.lang.String"/>
+	<parameter name="CLIENTESET" class="java.lang.String"/>
+	<parameter name="FORNECEDORSET" class="java.lang.String"/>
+	<parameter name="SERVICOSET" class="java.lang.String"/>
+	<parameter name="FILEINT" class="java.lang.String"/>
+	<parameter name="IDCLIENTE" class="java.lang.String"/>
+	<parameter name="EMPRESACLIENTE" class="java.lang.String"/>
+	<parameter name="CNPJEMPRESACLIENTE" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT file.`ID`,
+	file.`CPFCLIENTE`,
+	file.`FILE`,
+	file.`CLIENTE`,
+	file.`N_RES_STUR`,
+	file.`SERVICO`,
+	file.`EMISSAO`,
+	file.`DATAIN`,
+	file.`DATAOUT`,
+	file.`TIPO`,
+	file.`ITEM`,
+	file.`FORNECEDOR`,
+	file.`CNPJFORNECEDOR`,
+	file.`RECEBIMENTO`,
+	file.`DOCUMENTO`,
+	file.`VALOR`,
+	file.`STATUS`,
+	file.`PENDENTE`,
+	file.`EXCLUIDO`,
+	os.`OS`
+FROM os
+	INNER JOIN file ON 
+	 file.`FILE` = os.`FILE` 
+WHERE 
+	 file.`FILE` LIKE $P{FILEINT}
+GROUP BY file.`FILE`]]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="file"/>
+	</field>
+	<field name="CPFCLIENTE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CPFCLIENTE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="file"/>
+	</field>
+	<field name="FILE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FILE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="file"/>
+	</field>
+	<field name="CLIENTE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CLIENTE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="file"/>
+	</field>
+	<field name="N_RES_STUR" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="N_RES_STUR"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="file"/>
+	</field>
+	<field name="SERVICO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="SERVICO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="file"/>
+	</field>
+	<field name="EMISSAO" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="EMISSAO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="file"/>
+	</field>
+	<field name="DATAIN" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="DATAIN"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="file"/>
+	</field>
+	<field name="DATAOUT" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="DATAOUT"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="file"/>
+	</field>
+	<field name="TIPO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="TIPO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="file"/>
+	</field>
+	<field name="ITEM" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ITEM"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="file"/>
+	</field>
+	<field name="FORNECEDOR" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FORNECEDOR"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="file"/>
+	</field>
+	<field name="CNPJFORNECEDOR" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CNPJFORNECEDOR"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="file"/>
+	</field>
+	<field name="RECEBIMENTO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="RECEBIMENTO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="file"/>
+	</field>
+	<field name="DOCUMENTO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DOCUMENTO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="file"/>
+	</field>
+	<field name="VALOR" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="VALOR"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="file"/>
+	</field>
+	<field name="STATUS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="STATUS"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="file"/>
+	</field>
+	<field name="PENDENTE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="PENDENTE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="file"/>
+	</field>
+	<field name="EXCLUIDO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="EXCLUIDO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="file"/>
+	</field>
+	<field name="OS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="OS"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="os"/>
+	</field>
+	<group name="TIPO">
+		<groupExpression><![CDATA[$F{TIPO}]]></groupExpression>
+	</group>
+	<background>
+		<band height="17"/>
+	</background>
+	<title>
+		<band height="139">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="144" backcolor="#607D8B" uuid="0eb55b8f-d298-4b9f-ba82-3272a3d4de45"/>
+				<staticText>
+					<reportElement x="20" y="4" width="420" height="43" forecolor="#FFFFFF" uuid="0ebec5f2-32ed-4d11-a9a1-ab3dc501d3fe"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ORDEM DE SERVIÇO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="20" y="44" width="256" height="20" forecolor="#FFFFFF" uuid="120ea909-1708-4d16-918d-5e8761692fcb"/>
+					<textElement textAlignment="Left">
+						<font size="12" isBold="false"/>
+					</textElement>
+					<text><![CDATA[ORDEM DE SERVIÇO DO FILE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="20" y="100" width="60" height="20" forecolor="#FFFFFF" uuid="2ea7add3-58c7-4bbd-8f06-b1c59326a730"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[FILE:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="80" y="100" width="100" height="20" forecolor="#FFFFFF" uuid="ba76eb98-8eb6-4b93-a4c1-2cbe0758796f"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{FILE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="201" y="100" width="56" height="20" forecolor="#FFFFFF" uuid="efd176ea-11fb-442b-96c0-6dc650f1d703"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[CLIENTE:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="257" y="100" width="138" height="20" forecolor="#FFFFFF" uuid="ccbf5694-da3e-4039-828a-689c5d6d3dec"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{CLIENTE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="405" y="100" width="55" height="20" forecolor="#FFFFFF" uuid="f0f2b3ae-4fc6-4347-b9b1-d6bdca0ebbae"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[SERVIÇO:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="460" y="100" width="115" height="20" forecolor="#FFFFFF" uuid="3e63b5b9-49da-4514-8dc3-34c607440279"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{SERVICO}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="20" y="119" width="60" height="20" forecolor="#FFFFFF" uuid="fc157352-b06b-4d2a-9cd9-81895ad3d42f"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[EMISSÃO:]]></text>
+				</staticText>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement x="80" y="119" width="100" height="20" forecolor="#FFFFFF" uuid="9a9bf573-c4a1-4b32-9984-eacc9e1c28bd"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{EMISSAO}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="201" y="119" width="56" height="20" forecolor="#FFFFFF" uuid="9e7a6710-9912-478f-b477-62fa9e8f30ed"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[DATA IN:]]></text>
+				</staticText>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement x="257" y="119" width="138" height="20" forecolor="#FFFFFF" uuid="09ccbe40-72e5-4ec7-b787-3cce504a2b45"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DATAIN}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="405" y="119" width="55" height="20" forecolor="#FFFFFF" uuid="a68173c3-a8b8-4f72-99b8-1a9af4db27a9"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[DATA OUT:]]></text>
+				</staticText>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement x="460" y="119" width="115" height="20" forecolor="#FFFFFF" uuid="5241ab81-2b38-4853-a8b0-7fc931fc5562"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DATAOUT}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="300" y="34" width="275" height="23" forecolor="#FFFFFF" uuid="b92b766a-f0de-46db-8d2a-ab9ff7713c58"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{EMPRESACLIENTE}]]></textFieldExpression>
+				</textField>
+				<textField pattern="##.###">
+					<reportElement x="300" y="60" width="275" height="30" forecolor="#FFFFFF" uuid="fdbdbe6c-c284-478f-9de6-0468f48c04e1"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["CNPJ: " +$P{CNPJEMPRESACLIENTE}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<detail>
+		<band height="140">
+			<textField>
+				<reportElement x="0" y="10" width="555" height="120" uuid="a8b2cb68-11a4-46f8-8634-fd42e1f5f01b"/>
+				<textFieldExpression><![CDATA[$F{OS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="130">
+			<staticText>
+				<reportElement mode="Opaque" x="545" y="95" width="30" height="18" forecolor="#FFFFFF" backcolor="#607D8B" uuid="31acbe63-8dd3-4935-905e-7bc6ab2f91cf">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="276ad15b-0e1a-4f84-9749-e148c5feded6"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#607D8B"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#607D8B"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#607D8B"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#607D8B"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#607D8B"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="95" width="495" height="18" forecolor="#FFFFFF" backcolor="#607D8B" uuid="d6e00509-194c-4957-a481-937d7f834558"/>
+				<box>
+					<pen lineColor="#607D8B"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#607D8B"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#607D8B"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#607D8B"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#607D8B"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="495" y="95" width="60" height="18" forecolor="#FFFFFF" backcolor="#607D8B" uuid="7c09ca74-dbd8-41e9-80e7-60948785225b"/>
+				<box>
+					<pen lineColor="#607D8B"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#607D8B"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#607D8B"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#607D8B"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#607D8B"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="96" width="100" height="13" forecolor="#FFFFFF" backcolor="#607D8B" uuid="dee8c552-a72c-4ee1-8487-d5fed0405bba"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="-20" y="95" width="20" height="18" forecolor="#FFFFFF" backcolor="#607D8B" uuid="8cb432a4-bef8-41d6-9066-a66cc246c50c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="276ad15b-0e1a-4f84-9749-e148c5feded6"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#607D8B"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#607D8B"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#607D8B"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#607D8B"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#607D8B"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="4" width="579" height="1" forecolor="#607D8B" uuid="a371ab22-15c9-4c75-8533-586bc56a8863"/>
+			</line>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="451" y="113" width="94" height="17" forecolor="#607D8B" backcolor="#607D8B" uuid="06416021-1ee3-42a0-800c-95603a5330f9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[AlianzSys ®]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
